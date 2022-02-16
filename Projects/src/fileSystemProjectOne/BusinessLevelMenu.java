@@ -8,10 +8,14 @@ public class BusinessLevelMenu {
 		String usersChoice;
 		char selection;
 		
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 
 
 		do { 
+			for (int i = 0; i < 5; ++i) {
+				System.out.println();
+			}
 			System.out.println("   Business-level Menu \n");
 			System.out.println("1. Add a user specified file");
 			System.out.println("2. Delete a user specified file");
@@ -19,14 +23,13 @@ public class BusinessLevelMenu {
 			System.out.print("Enter the number that corresponds with your choice:  ");
 			usersChoice = scan.nextLine();
 			selection = usersChoice.charAt(0);
-			if ((selection != '1') || (selection != '2') || (selection != '3')) {
-				System.out.println("Please enter an number that is 1-3");
-			}
+
 		} while ((selection != '1') && (selection != '2') && (selection != '3'));
+		
 		if (selection == '3') {
 			selection = 'x';
 		}
-		scan.close();
+		//scan.close();
 		return selection;
 	}
 	
