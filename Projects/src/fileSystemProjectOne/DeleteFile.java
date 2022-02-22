@@ -4,13 +4,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class DeleteFile {
 	
 	public static char deleteFile (ArrayList <String> fileList){
-		@SuppressWarnings("resource")
-		Scanner scan = new Scanner(System.in);
+//		@SuppressWarnings("resource")
+//		Scanner scan = new Scanner(System.in);
 		
 		// creates space in the console for readability
 		for (int i = 0; i < 2; ++i) {
@@ -18,18 +18,18 @@ public class DeleteFile {
 		}
 		try {
 			
-			System.out.println("Please enter the file name that you would like to delete:  ");
+			System.out.print("Please enter the file name that you would like to delete:  ");
 
-			String fileName = scan.nextLine();
+			String fileName = FileSystemMain.SCAN.nextLine();;
 			Path path = Paths.get(fileName);
 
 			if (Files.exists(path)) {
 				Files.delete(path);
-				System.out.println("File "+ path + " deleted");
+				System.out.println("\nFile "+ path + " deleted");
 				fileList.remove(fileName);
 				
 			}else {
-				System.out.println("File doesnt exist");
+				System.out.println("\nFile doesnt exist");
 			}
 			
 		} catch (Exception iox) {

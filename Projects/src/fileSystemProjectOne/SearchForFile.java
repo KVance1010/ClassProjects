@@ -4,13 +4,13 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class SearchForFile {
 
 	public static char searchForFile(ArrayList<String> fileList) {
-		@SuppressWarnings( "resource" )
-		Scanner scan = new Scanner(System.in);
+//		@SuppressWarnings( "resource" )
+//		Scanner scan = new Scanner(System.in);
 
 		// creates space in the console for readability
 		for (int i = 0; i < 2; ++i) {
@@ -20,7 +20,7 @@ public class SearchForFile {
 		//Start of the Search feature
 		try {
 
-			String fileName = scan.nextLine();
+			String fileName = FileSystemMain.SCAN.nextLine();;
 			Path path = Paths.get(fileName);
 
 			if (Files.exists(path)) {
@@ -32,7 +32,7 @@ public class SearchForFile {
 				else {
 					System.out.println( "\nFile \"" + fileName + "\" File name is not in the file list directory");
 					System.out.println("would you like to add it? \nPlease enter y for yes or n for no");
-					String saveFile = scan.nextLine();
+					String saveFile = FileSystemMain.SCAN.nextLine();
 					if (saveFile.toLowerCase().charAt(0) == 'y') {
 						fileList.add(fileName);
 						System.out.println("\nFile added to file list directory");

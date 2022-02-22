@@ -1,14 +1,14 @@
 package fileSystemProjectOne;
 
-import java.util.Scanner;
+
 
 public class BusinessLevelMenu {
 
 	public static char businessLevelMenu() {
 		String usersChoice;
 		char selection;
-		@SuppressWarnings("resource")
-		Scanner scan = new Scanner(System.in);
+//		@SuppressWarnings("resource")
+//		Scanner scan = new Scanner(System.in);
 
 		
 		do {
@@ -21,7 +21,8 @@ public class BusinessLevelMenu {
 			System.out.println("3. Search for a file by name");
 			System.out.println("4. Return to the MainMenu\n");
 			System.out.print("Enter the number that corresponds with your choice:  ");
-			usersChoice = scan.nextLine();
+			usersChoice = FileSystemMain.SCAN.nextLine();
+			
 			selection = usersChoice.charAt(0);
 
 		} while ((selection != '1') && (selection != '2') && (selection != '3')&& (selection != '4'));

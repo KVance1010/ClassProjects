@@ -2,13 +2,19 @@ package fileSystemProjectOne;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 public class FileSystemMain {
+	
+	public static final Scanner SCAN = new Scanner(System.in) ;
 
 	public static void main(String[] args) {
 		char usersChoice;
 		char businessChoice;
 		ArrayList <String> fileList = new ArrayList<>();
+		
+		System.out.println("Welcome to the Lockers Pvt. Ltd \"LockedMe.com\" project");
+		System.out.println("Developed by Kyle Vance");
 		
 		
 		//MainMenu menuOne = new MainMenu();
@@ -21,13 +27,17 @@ public class FileSystemMain {
 			
 			case '1':   //Retrieving the file names in an ascending order
 				if (fileList.isEmpty()) {
-					System.out.println("\n\nNo files in this directory");
+					System.out.println("\n\nThere are no files in this directory currently.");
+					System.out.println("you can search for a file and added it to the directory\nin the search option feature of business-level operations.");
+					System.out.println("Files added through the AddFile feature are automatically\nadded to the directory.");
 				}
 				else {
 					Collections.sort(fileList);
+					  System.out.println("");
 				      for (String file : fileList) {
 				      System.out.println(file);  
 				      }
+				      System.out.println("");
 				}
 				break;
 			
@@ -53,7 +63,7 @@ public class FileSystemMain {
 		
 		System.out.println("You have chosen to leave the program.");
 		System.out.println("Good Bye.");
-		
+		SCAN.close();
 		
 	}
 
