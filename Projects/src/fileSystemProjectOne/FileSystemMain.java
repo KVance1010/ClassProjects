@@ -28,10 +28,11 @@ public class FileSystemMain {
 			case '1':   //Retrieving the file names in an ascending order
 				if (fileList.isEmpty()) {
 					System.out.println("\n\nThere are no files in this directory currently.");
-					System.out.println("you can search for a file and added it to the directory\nin the search option feature of business-level operations.");
-					System.out.println("Files added through the AddFile feature are automatically\nadded to the directory.");
+					System.out.println("You can search for a file and added it to the directory\nin the search option feature of business-level operations.");
+					System.out.println("Files added through the Add File feature are automatically\nadded to the directory.");
 				}
 				else {
+					System.out.println("\nFile list in ascending order\n");
 					Collections.sort(fileList);
 					  System.out.println("");
 				      for (String file : fileList) {

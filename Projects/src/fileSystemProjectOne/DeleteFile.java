@@ -25,11 +25,11 @@ public class DeleteFile {
 
 			if (Files.exists(path)) {
 				Files.delete(path);
-				System.out.println("\nFile "+ path + " deleted");
+				System.out.println("\nFile \""+ path + "\" deleted");
 				fileList.remove(fileName);
 				
 			}else {
-				System.out.println("\nFile doesnt exist");
+				System.out.println("\nFile \"" + fileName + "\" not found");
 			}
 			
 		} catch (Exception iox) {

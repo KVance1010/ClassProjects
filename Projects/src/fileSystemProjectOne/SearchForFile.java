@@ -19,7 +19,8 @@ public class SearchForFile {
 		
 		//Start of the Search feature
 		try {
-
+			
+			System.out.print("Please enter the file name you would like to search for:   ");
 			String fileName = FileSystemMain.SCAN.nextLine();;
 			Path path = Paths.get(fileName);
 
